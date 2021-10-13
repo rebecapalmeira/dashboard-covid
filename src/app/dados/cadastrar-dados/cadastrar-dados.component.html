@@ -1,0 +1,69 @@
+<main class="container bg-light p-5">
+    <p class="display-4 text-center">Cadastro de Informações COVID - Salvador/BA</p>
+    <form action="" class="form bg-white p-5">
+        <fieldset>
+            <legend class="text-center">Cadastro de Casos Confirmados e Óbitos / Mês</legend>
+            <small> {{ camposObrigatorios }} </small>
+            <div class="row py-5">
+                <div class="col-lg-3 col-sm-12 mb-2">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">* Casos</div>
+                        </div>
+                        <input type="number" class="form-control" id="casos" placeholder="Casos" name="casosConfirmados" [(ngModel)]="dadosCovid.casosConfirmados" required>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-sm-12 mb-2">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">* Óbitos</div>
+                        </div>
+                        <input type="number" name="obitos" id="obitos" class="form-control" placeholder="Óbitos" [(ngModel)]="dadosCovid.obitos" required>
+                    </div>    
+                </div>
+    
+                <div class="col-lg-3 col-sm-12 mb-2">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">* Mês</div>
+                        </div>
+                        <select name="mes" id="mes" class="form-control" [(ngModel)]="dadosCovid.mes" required>
+                            <option *ngFor="let mes of meses" >
+                                {{ mes }}
+                            </option>
+                        </select>
+                    </div>   
+                </div>
+
+                <div class="col-lg-3 col-sm-12">
+                    <button class="btn btn-info px-5" (click)="cadastrarDadosCovid()">Cadastrar</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+
+    <!-- <table class="table my-5">
+        <thead>
+            <tr>
+                <th>Mês</th>
+                <th>Casos Confirmados</th>
+                <th>Óbitos</th>
+            </tr>
+        </thead>
+        <tbody  *ngFor="let dadoCadastrado of dadosCadastrados">
+            <tr>
+                <td>
+                    {{ dadoCadastrado.mes }}
+                </td>
+                <td>
+                    {{ dadoCadastrado.casosConfirmados }}
+                </td>
+                <td>
+                    {{ dadoCadastrado.obitos }}
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+</main>

@@ -1,0 +1,73 @@
+<div class="container">
+    <h2 class="text-center alert alert-warning py-3 my-3">Selecione o tipo de gráfico para exibir os dados</h2>
+
+    <div class="row">
+        <form action="" class="form my-5 col-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Gráfico</div>
+                </div>
+                <select name="" id="" class="form-control" #graficos>
+                    <option *ngFor="let tipoGrafico of tiposGraficos">
+                        {{ tipoGrafico }}
+                    </option>
+                </select>
+            </div>
+        </form> 
+
+        <div class="col-9" [style.display]="graficos.value == 'Pizza' ? 'block' : 'none'">
+            <div class="container row">
+                <div  class="col-lg-6 col-md-12">
+                    <h3 class="text-center">Casos Confirmados</h3>
+                    <div id="pie_chart_casos"></div>
+                </div>
+                <div  class="col-lg-6 col-md-12">
+                    <h3 class="text-center">Óbitos</h3>
+                    <div id="pie_chart_obitos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" [style.display]="graficos.value == 'Barras' ? 'block' : 'none'">
+            <div class="container row">
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Casos Confirmados</h3>
+                    <div id="bar_chart_casos"></div>
+                </div>
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Óbitos</h3>
+                    <div id="bar_chart_obitos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" [style.display]="graficos.value == 'Linhas' ? 'block' : 'none'">
+            <div class="container row">
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Casos Confirmados</h3>
+                    <div id="line_chart_casos"></div>
+                </div>
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Óbitos</h3>
+                    <div id="line_chart_obitos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" [style.display]="graficos.value == 'Colunas' ? 'block' : 'none'">
+            <div class="container row">
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Casos Confirmados</h3>
+                    <div id="column_chart_casos"></div>
+                </div>
+                <div  class="col-lg-6 col-md-12 p-5">
+                    <h3 class="text-center">Óbitos</h3>
+                    <div id="column_chart_obitos"></div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+
+
+
